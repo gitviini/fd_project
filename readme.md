@@ -2,7 +2,7 @@
 
 By: [v.ii.n.i](https://github.com/gitviini/)
 
-## Arquiteture Patterns
+## Architecture pattern
 
 * Comments: begin for verbs;
 * Variables and Constants: use snack_case;
