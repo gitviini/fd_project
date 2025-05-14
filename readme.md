@@ -8,7 +8,7 @@ By:
 
 ## Architecture (in Layers)
 
-``` python
+```shell
 ├── readme.md
 ├── run.py #Run project (python run.py)
 └── src 
