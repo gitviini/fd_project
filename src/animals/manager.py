@@ -1,0 +1,3 @@
+""" 
+* MANAGER ANIMALS DATA
+"""
