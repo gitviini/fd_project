@@ -1,7 +1,7 @@
 ## FD Project
 
 By: 
-[v.ii.n.i](https://github.com/gitviini/),
+[Vinicius Gabriel](https://github.com/gitviini/),
 [Juliana Comparoto](https://github.com/comparoto),
 [Marcos Fraga](https://github.com/MarcTony0),
 [Matheus](https://github.com/matheusprojects).
