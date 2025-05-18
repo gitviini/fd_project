@@ -4,7 +4,7 @@ By:
 [Vinicius Gabriel](https://github.com/gitviini/),
 [Juliana Comparoto](https://github.com/comparoto),
 [Marcos Fraga](https://github.com/MarcTony0),
-[Matheus](https://github.com/matheusprojects).
+[Matheus de Freitas](https://github.com/matheusprojects).
 
 ## Architecture (in Layers)
 
