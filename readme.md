@@ -24,7 +24,7 @@ By:
     │   ├── display.py
     │   └── manager.py
     └── utils #Utils files functions\libraries
-        ├── image_manager.py
+        ├── image-manager.py
         └── json-parser.py
 ```
 
