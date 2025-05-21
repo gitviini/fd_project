@@ -11,6 +11,10 @@ By:
 ## Architecture (in Layers)
 
 ```shell
+├── jsons #Fouder of .jsons
+│   ├── animals.json
+│   ├── support_points.json
+│   └── users.json
 ├── readme.md
 ├── run.py #Run project (python run.py)
 └── src 
@@ -24,8 +28,9 @@ By:
     │   ├── display.py
     │   └── manager.py
     └── utils #Utils files functions\libraries
-        ├── image-manager.py
-        └── json-parser.py
+        ├── constants.py #Constants (COLORS and STYLES)
+        ├── json_parser.py #Json Parser (JSON -> DICT and DICT -> JSON)
+        └── util.py # Tools (clear terminal, receive inputs, colors ...)
 ```
 
 ## Architecture pattern
