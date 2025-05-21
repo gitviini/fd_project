@@ -4,7 +4,7 @@
 
 from src.utils.json_parser import json_for_dict, json_write
 
-JSON_USER_PATH = "users.json"
+JSON_USER_PATH = "jsons/users.json"
 
 
 # * READ USERS

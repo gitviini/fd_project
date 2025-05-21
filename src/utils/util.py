@@ -25,7 +25,14 @@ def receive_user_input(
             response = int(input(text)) if output_type == "int" else input(text)
             break
         except ValueError:
-            print("Valor inválido. Tente novamente.")
+            print(color("Valor inválido. Tente novamente.","red"))
+            input(
+                color(
+                    "\nPressione ⤶ Enter para continuar.",
+                    color="gray",
+                    style="italic",
+                )
+            )
         except Exception:
             print("Ops!😬 Houve um erro. Tente novamente.")
     return response
@@ -41,6 +48,13 @@ def color(
     try:
         return f"\x1b[{STYLES[style]};{COLORS[color]}m{text}\x1b[m"
     except KeyError:
-        print("Valor inválido. Tente novamente.")
+        print(color("Valor inválido. Tente novamente.","red"))
+        input(
+            color(
+                "\nPressione ⤶ Enter para continuar.",
+                color="gray",
+                style="italic",
+            )
+        )
     except Exception:
         print("Ops!😬 Houve um erro. Tente novamente.")
