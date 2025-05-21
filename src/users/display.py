@@ -3,10 +3,47 @@
 """
 
 from src.utils.util import color, receive_user_input, clear
+from src.users.manager import get_users
+
+
+# * Menu
+def show_menu_users():
+    while True:
+        clear()
+        option = int(input(
+"""-- Usuários --
+0)VOLTAR
+1)PESQUISAR
+2)CRIAR
+3)ATUALIZAR
+4)DELETAR
+: """
+            ))
+
+        match (option):
+            case 0:
+                break
+            case 1:
+                # Read
+                show_users()
+            case 2:
+                # Create
+                new_user_dict()
+            case 3:
+                # Update
+                update_user()
+            case 4:
+                # Delete
+                delete_user()
+            case _:
+                print("Opção inválida. Escolha entre (0 - 4)")
+                input("Pressione ⤶ Enter para continuar.")
 
 
 # * Read users
-def show_users(users=dict) -> None:
+def show_users() -> None:
+
+    users = get_users()
     clear()
 
     # If users dict is empty, show alert
@@ -41,6 +78,7 @@ def show_users(users=dict) -> None:
 # * Create users
 def new_user_dict() -> dict:
     STEPS = {
+        "cpf": {"text": "Digite seu cpf: ", "type": "str"},
         "name": {"text": "Digite seu nome: ", "type": "str"},
         "age": {"text": "Digite sua idade: ", "type": "int"},
         "personality": {
