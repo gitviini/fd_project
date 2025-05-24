@@ -1,5 +1,5 @@
 """
-* SHOW ANIMALS DATA
+* SHOW SUPORT POINTS
 """
 
 def show_menu_SuportPoints():
