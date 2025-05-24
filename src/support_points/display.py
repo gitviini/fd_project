@@ -18,19 +18,19 @@ def show_menu_SuportPoints():
             case 0:
               break
             case 1:
-              #pesquisar
+              #pesquisar menus
               show_menu_SuportPoints()
             case 2:
-              #adicionar
+              #adicionar pontos de apoio
               show_menu_adicionar_SuportPoints()
             case 3: 
-              #atualizar
+              #atualizar pontos de apoio
               show_menu_atualizar_SuportPoints()
             case 4:
-              #deletar
+              #deletar pontos de apoio
               show_menu_atualizar_SuportPoints()
             case _:
-              print("Opção inválida.Escolha entre (0 - 4)")
+              print("Opção inválida. Escolha entre (0 - 4)")
               input("Pressione Enter para continuar")
 
 def show_menu_pesquisa_SuportPoints():
