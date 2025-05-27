@@ -3,20 +3,35 @@
         "1": {
             "nome": "petshop",
             "trabalhadores": {
-                "123.123.123-00":{
-                    "nome":"joana",
-                    "função":"coordenadora"
+                "123.123.123-00": {
+                    "nome": "joana",
+                    "fun\u00e7\u00e3o": "coordenadora"
                 }
             },
             "animais": {
-                "1":{
-                    "especie":"cachorro",
-                    "raça":"pintcher",
-                    "nome":"bilubilu"
+                "1": {
+                    "especie": "cachorro",
+                    "ra\u00e7a": "pintcher",
+                    "nome": "bilubilu"
                 }
             },
             "foto": "0"
+        },
+        "2": {
+            "nome": "gab",
+            "trabalhadores": {},
+            "animais": {
+                "0": {
+                    "tipo": "cachorro",
+                    "quantidade": 2
+                },
+                "1": {
+                    "tipo": "gato",
+                    "quantidade": 1
+                }
+            },
+            "foto": "-"
         }
     },
-    "next_id": 2
+    "next_id": 3
 }

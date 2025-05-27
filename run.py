@@ -49,10 +49,10 @@ def criar_support_point():
         trabalhadores[nome_trab] = funcao """
 
     num_animais = int(input("Quantos tipos de animais deseja adicionar? "))
-    for _ in range(num_animais):
+    for id_animal in range(num_animais):
         tipo = input("Tipo do animal: ")
         quantidade = int(input("Quantidade: "))
-        animais[tipo] = quantidade
+        animais[id_animal] = {"tipo": tipo , "quantidade": quantidade}
 
     foto = input("Digite o caminho ou URL da foto do Ponto de Apoio: ")
 
