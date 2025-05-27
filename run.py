@@ -4,6 +4,7 @@
 
 import json
 import os
+from src.users.manager import verify_users
 
 support_points = {}
 next_id = 0
@@ -35,9 +36,17 @@ def criar_support_point():
 
     num_trabalhadores = int(input("Quantos trabalhadores deseja adicionar? "))
     for _ in range(num_trabalhadores):
-        nome_trab = input("Nome do trabalhador: ")
+        cpf_trab = input("Cpf do trabalhador: ")
+        verify_user = verify_users(cpf_trab) # Se o usuário existir, retorna o dicionário dele, senão retorna None
+        
+        if(verify_user == None):
+            print("Usuário não cadastrado. Cadastre-o primeiro.")
+        else:
+            trabalhadores[cpf_trab] = verify_user
+
+        """ nome_trab = input("Nome do trabalhador: ")
         funcao = input("Função: ")
-        trabalhadores[nome_trab] = funcao
+        trabalhadores[nome_trab] = funcao """
 
     num_animais = int(input("Quantos tipos de animais deseja adicionar? "))
     for _ in range(num_animais):
