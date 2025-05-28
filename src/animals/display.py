@@ -19,7 +19,7 @@ def show_menu_animals():
               break
             case 1:
               #pesquisar
-              show_menu_animals()
+              show_menu_pesquisa_animais()
             case 2:
               #adicionar
               show_menu_adicionar()
@@ -44,6 +44,12 @@ def show_menu_pesquisa_animais():
 4)
 """
      ))
+      match (option):
+         case 0:
+            break
+         case _:
+            print("Opção inválida.Escolha entre (0 - 4)")
+            input("Pressione Enter para continuar")
 def show_menu_adicionar():
    while True:
       option = int(input(
@@ -55,6 +61,13 @@ def show_menu_adicionar():
 4)
 """
     ))
+      match (option):
+         case 0:
+            break
+         case _:
+            print("Opção inválida.Escolha entre (0 - 4)")
+            input("Pressione Enter para continuar")
+
 def show_menu_atualizar_animais():
    while True:
       option = int(input(
@@ -77,3 +90,5 @@ def show_menu_deletar_animais():
 4)
 """
       ))
+
+show_menu_animals()
