@@ -15,11 +15,3 @@ def carregar_dados():
 def salvar_dados(banco_dados):
     with open(ARQUIVO_JSON, "w", encoding="utf-8") as arquivo:
         json.dump(banco_dados, arquivo, ensure_ascii=False, indent=4)
-'''
-def pesquisa_animais():
-    pass
-def adicionar_animais():
-    pass
-def atualizar_animais():
-    pass
-'''
