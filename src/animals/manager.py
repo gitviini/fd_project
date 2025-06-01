@@ -4,7 +4,7 @@
 import json
 import os
 
-ARQUIVO_JSON = "animals.json"
+ARQUIVO_JSON = os.path.join(os.path.dirname(__file__), "../../jsons/animals.json")
 
 def carregar_dados():
     if os.path.exists(ARQUIVO_JSON):
