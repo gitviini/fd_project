@@ -2,19 +2,20 @@
 * SHOW ANIMALS DATA
 """
 from src.animals.manager import carregar_dados, salvar_dados
-import os
+from src.utils.util import color, clear
 
 def show_menu_animals():
     while True:
-        option = input(
+        clear()
+        option = input(color(
 """--ANIMAIS--
 0) Voltar
 1) Pesquisar
 2) Adicionar
 3) Atualizar
 4) Deletar
-:"""        
-          ).strip()
+:""",color="pink"        
+          )).strip()
         
         match (option):
             case "0":
@@ -64,7 +65,7 @@ def atualizar_campos(animal):
             animal[chave] = novo_valor
 
 def show_menu_pesquisa_animais():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear()
     while True:
         option = input("""--PESQUISAR ANIMAIS--
 0) Voltar
@@ -113,7 +114,7 @@ def show_menu_pesquisa_animais():
 
 def show_menu_adicionar():
    while True:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        clear()
         option = input(
 """--ADICIONAR ANIMAIS--
 0) Voltar
@@ -137,7 +138,7 @@ def show_menu_adicionar():
                 
 def show_menu_atualizar_animais():
    while True:
-      os.system('cls' if os.name == 'nt' else 'clear')
+      clear()
       option = input(
 """--ATUALIZAR ANIMAIS--
 0) Voltar
@@ -178,7 +179,7 @@ def show_menu_atualizar_animais():
 
 def show_menu_deletar_animais():
    while True:
-      os.system('cls' if os.name == 'nt' else 'clear')
+      clear()
       option = input(
 """--DELETAR ANIMAIS--
 0) Voltar
