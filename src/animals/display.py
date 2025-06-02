@@ -2,8 +2,7 @@
 * SHOW ANIMALS DATA
 """
 from src.animals.manager import carregar_dados, salvar_dados
-
-animals_db = carregar_dados() 
+import os
 
 def show_menu_animals():
     while True:
@@ -65,6 +64,7 @@ def atualizar_campos(animal):
             animal[chave] = novo_valor
 
 def show_menu_pesquisa_animais():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         option = input("""--PESQUISAR ANIMAIS--
 0) Voltar
@@ -113,6 +113,7 @@ def show_menu_pesquisa_animais():
 
 def show_menu_adicionar():
    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         option = input(
 """--ADICIONAR ANIMAIS--
 0) Voltar
@@ -127,7 +128,7 @@ def show_menu_adicionar():
             dados = carregar_dados()
             proximo_id = str(max(map(int, dados.keys()), default=0) + 1)
             novo_animal = {}
-            for campo in ["nome", "espécie", "raça", "idade", "personalidade", "histórico_médico", "pontos de apoio"]:
+            for campo in ["nome", "espécie", "raça", "idade", "personalidade", "histórico_médico"]:
              novo_animal[campo] = input(f"{campo.capitalize()}: ").strip()
             dados[proximo_id] = novo_animal
             salvar_dados(dados)
@@ -136,6 +137,7 @@ def show_menu_adicionar():
                 
 def show_menu_atualizar_animais():
    while True:
+      os.system('cls' if os.name == 'nt' else 'clear')
       option = input(
 """--ATUALIZAR ANIMAIS--
 0) Voltar
@@ -176,6 +178,7 @@ def show_menu_atualizar_animais():
 
 def show_menu_deletar_animais():
    while True:
+      os.system('cls' if os.name == 'nt' else 'clear')
       option = input(
 """--DELETAR ANIMAIS--
 0) Voltar
@@ -218,3 +221,5 @@ def show_menu_deletar_animais():
          case _:
                 print("Opção inválida. Escolha entre (0 - 2)")
                 input("\nPressione Enter para continuar\n")
+                
+show_menu_animals()
