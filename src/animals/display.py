@@ -1,7 +1,7 @@
 """
 * SHOW ANIMALS DATA
 """
-from manager import carregar_dados, salvar_dados
+from src.animals.manager import carregar_dados, salvar_dados
 
 animals_db = carregar_dados() #Simular um "banco de dados"
 proximo_id = max([int(i) for i in animals_db.keys()], default=0) + 1
@@ -494,5 +494,3 @@ def show_menu_deletar_animais():
             case _:
                 print("Opção inválida.Escolha entre (0 - 4)")
                 input("\nPressione Enter para continuar\n")
-
-show_menu_animals()
