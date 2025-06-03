@@ -8,6 +8,13 @@ By:
 [Joanna Farias](https://github.com/Joanna-Farias),
 [Malu](https://github.com/alumiria).
 
+## Running project
+```shell
+git clone https://github.com/gitviini/fd_project/ &&
+cd fd_project &&
+python ./run.py
+```
+
 ## Architecture (in Layers)
 
 ```shell
@@ -28,9 +35,7 @@ By:
     │   ├── display.py
     │   └── manager.py
     └── utils #Utils files functions\libraries
-        ├── constants.py #Constants (COLORS and STYLES)
-        ├── json_parser.py #Json Parser (JSON -> DICT and DICT -> JSON)
-        └── util.py # Tools (clear terminal, receive inputs, colors ...)
+        └── util.py # Tools (clear terminal)
 ```
 
 ## Architecture pattern
@@ -47,4 +52,4 @@ def function(*args) -> int:
 		...
 	return 0
 ```
-* Modules: part layers of aplication by files, Example: `run.py`, `json.py`, `users.py` e etc.
+* Modules: part layers of aplication by files, Example: `run.py`, `users.py` e etc.
