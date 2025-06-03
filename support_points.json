@@ -1,0 +1,57 @@
+{
+    "support_points": {
+        "1": {
+            "name": "fds",
+            "workers": {},
+            "animals": {}
+        },
+        "2": {
+            "name": "fds",
+            "workers": {},
+            "animals": {}
+        },
+        "3": {
+            "name": "vs",
+            "workers": {},
+            "animals": {
+                "1": {
+                    "id": "1"
+                },
+                "2": {
+                    "id": "1"
+                }
+            }
+        },
+        "5": {
+            "name": "pet",
+            "workers": {
+                "1": {
+                    "id": "1",
+                    "name": "vinicius"
+                }
+            },
+            "animals": {
+                "1": {
+                    "id": "1",
+                    "name": "vinicius"
+                }
+            }
+        },
+        "7": {
+            "name": "petshop",
+            "workers": {
+                "1": {
+                    "id": "1",
+                    "name": "vinicius"
+                }
+            },
+            "animals": {
+                "1": {
+                    "id": "1",
+                    "name": "vinicius"
+                }
+            }
+        }
+    },
+    "next_id": 8
+}
