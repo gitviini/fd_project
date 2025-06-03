@@ -1,22 +1,16 @@
-"""
-* RUN PROJECT
-"""
-
 from time import sleep
 from src.utils.util import receive_user_input, clear
 from src.users.display import show_menu_users
 from src.users.manager import get_users, create_user
-from src.utils.util import color
 from src.animals.display import show_menu_animals
 
 run = True
 
-TEMPLATE = f"""{color("- 🐾 ADOÇÃO DE ANIMAIS 🐾 -", "green", "italic")}
-
-{color("0)", "cyan")}USUÁRIOS
-{color("1)", "cyan")}ANIMAIS
-{color("2)", "cyan")}PONTOS DE APOIO
-{color("3)", "cyan")}SAIR
+TEMPLATE = f"""🐾 ADOÇÃO DE ANIMAIS 🐾
+0)USUÁRIOS
+1)ANIMAIS
+2)PONTOS DE APOIO
+3)SAIR
 : """
 
 clear()
@@ -36,16 +30,10 @@ while run:
         case 3:
             # Back
             run = False
-            print(color("Desligando...", color="red"))
+            print("Desligando...")
             sleep(1)
         case _:
             # Another
-            print(color("Opção inválida. Escolha entre (0 - 3).","red"))
-            input(
-                color(
-                    "\nPressione ⤶ Enter para continuar.",
-                    color="gray",
-                    style="italic",
-                )
-            )
+            print("Opção inválida. Escolha entre (0 - 3).")
+            input("\nPressione ⤶ Enter para continuar.",)
     clear()
