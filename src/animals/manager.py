@@ -10,7 +10,7 @@ def load_json():
                 return json.load(arquivo)
         except json.JSONDecodeError:
             print("Erro: o arquivo JSON está vazio ou corrompido. Retornando dicionário vazio.")
-            return {}
+            return{}
     return{}
 
 def save_json(banco_dados):
