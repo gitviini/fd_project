@@ -1,1 +1,9 @@
-{"0": {"name": "vinicius", "age": 18, "personality": 0, "if_work": 0, "workplace": "casa"}, "1": {"name": "camila", "age": 20, "personality": 1, "if_work": 1, "workplace": ""}, "2": {"name": "bia", "age": 14, "personality": 0, "if_work": 1, "workplace": ""}, "3": {"name": "vinicius", "age": 18, "personality": 0, "if_work": 0, "workplace": "sadfsaef"}, "4": {"cpf": "1230739493", "name": "alex", "age": 20, "personality": 1, "if_work": 0, "workplace": "sindacspe"}, "5": {"cpf": "2309184091234132", "name": "bananinha", "age": 1, "personality": 0, "if_work": 0, "workplace": "fsdfasdf"}}
+{
+    "1": {
+        "name": "Vv",
+        "contact": "81.9.9999-9999",
+        "cpf": "123.123.123-12",
+        "personality": "Extrovertido(a)",
+        "workplace": ""
+    }
+}

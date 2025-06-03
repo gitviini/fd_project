@@ -1,51 +1,37 @@
-"""
-* RUN PROJECT
-"""
 
 from time import sleep
-from src.utils.util import receive_user_input, clear
-from src.users.display import show_menu_users
-from src.users.manager import get_users, create_user
-from src.utils.util import color
+from src.utils.util import clear
+from src.users.display import show_users_menu
 from src.animals.display import show_menu_animals
+from src.support_points.display import show_menu_support_points
 
 run = True
 
-TEMPLATE = f"""{color("- 🐾 ADOÇÃO DE ANIMAIS 🐾 -", "green", "italic")}
 
-{color("0)", "cyan")}USUÁRIOS
-{color("1)", "cyan")}ANIMAIS
-{color("2)", "cyan")}PONTOS DE APOIO
-{color("3)", "cyan")}SAIR
+TEMPLATE = f"""- 🐾 ADOÇÃO DE ANIMAIS 🐾 -
+
+0)USUÁRIOS
+1)ANIMAIS
+2)PONTOS DE APOIO
+3)SAIR
 : """
 
 clear()
 while run:
-    option = receive_user_input(TEMPLATE)
+    option = input(TEMPLATE)
     match option:
-        case 0:
-            # Users
-            show_menu_users()
-        case 1:
-            # Animals
+        case "0":
+            show_users_menu()
+        case "1":
             show_menu_animals()
-            pass
-        case 2:
-            # Support Points
-            pass
-        case 3:
-            # Back
+        case "2":
+            show_menu_support_points()
+        case "3":
             run = False
-            print(color("Desligando...", color="red"))
+            print("Desligando...")
             sleep(1)
         case _:
-            # Another
-            print(color("Opção inválida. Escolha entre (0 - 3).","red"))
-            input(
-                color(
-                    "\nPressione ⤶ Enter para continuar.",
-                    color="gray",
-                    style="italic",
-                )
-            )
+            print("\nOpção inválida. Escolha entre (0 - 3).")
+            input("\nPressione ⤶ Enter para continuar.")
+    
     clear()
