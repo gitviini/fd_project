@@ -46,7 +46,7 @@ def create_support_point():
             "workers": workers,
             "animals": animals
         }
-        print(f"\nSupport point criado com ID {next_id}.")
+        print(f"\nPonto de Apoio criado com ID {next_id}.")
         next_id += 1
         save_data()
     except Exception:
