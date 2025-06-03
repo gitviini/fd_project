@@ -1,70 +1,56 @@
-import json
-import os
-from src.users.manager import verify_users
-
-support_points = {}
-next_id = 1
-json_file = "support_points.json"
-
-
-def load_data():
-    global support_points, next_id
-    if os.path.exists(json_file):
-        with open(json_file, "r") as file:
-            data = json.load(file)
-            support_points.update({int(key): value for key, value in data.get("support_points", {}).items()})
-            next_id = data.get("next_id", 1)
-
-
-def save_data():
-    with open(json_file, "w") as file:
-        json.dump({
-            "support_points": support_points,
-            "next_id": next_id
-        }, file, indent=4)
-
+from src.users.display import update_user_workplace
+from src.animals.display import atualizar_animal_support_point
+from src.support_points.manager import next_id, support_points, load_data, save_data
 
 def create_support_point():
-    global next_id
+    try:
 
-    name = input("Digite o nome do Ponto de Apoio que deseja adicionar: ")
-    workers = {}
-    animals = {}
+        global next_id
 
-    num_workers = int(input("Quantos trabalhadores deseja adicionar? "))
-    for _ in range(num_workers):
-        id_worker = input("Informe o ID do trabalhador:")
-        verify_user = verify_users(id_worker)    #Falta fazer pegar e mostrar as infos dos usuarios
-        
-        if(verify_user == None):
-            print("Usuário não cadastrado. Cadastre-o primeiro.")
-        else:
-            worker = {
-                "worker_name": verify_user.get,
-                "worker_function": verify_user.get        #Testar isso aqui
-            }
-            workers[id_worker] = worker
+        name = input("Digite o nome do Ponto de Apoio que deseja adicionar: ")
+        workers = {}
+        animals = {}
 
+        num_workers = int(input("Quantos trabalhadores deseja adicionar? "))
 
-    num_animals = int(input("Quantos animais deseja adicionar? "))
-    for id_animal in range(1, num_animals + 1):
-        id = input("Informe o ID do animal:")
-    
-        animal = {
-            "id": id   #Falta fazer pegar e mostrar as infos dos animais 
-        }  
-         
-        animals[str(id_animal)] = animal  
+        for _ in range(num_workers):
+            while True:
+                id_worker = input("Informe o ID do trabalhador:")
+                if id_worker.lower() == 'sair':
+                    break
+                verify_user = update_user_workplace(id_worker, name)
 
+                if(verify_user == None):
+                    print("Usuário não cadastrado. Informe um ID existente ou digite 'sair' para sair: ")
+                else:
+                    workers[id_worker] = verify_user
+                    print(f"Trabalhador {verify_user.get('name','')} adicionado com sucesso")
+                    break
+        num_animals = int(input("Quantos animais deseja adicionar? "))
+        for _ in range( num_animals ):
 
-    support_points[next_id] = {
-        "nome": name,
-        "trabalhadores": workers,    # Aqui tem q fazer mostrar as infos tbm 
-        "animais": animals
-    }
-    print(f"\nSupport point criado com ID {next_id}.")
-    next_id += 1
-    save_data()  
+            while True:
+                id_animal= input("Informe o ID do animal:")
+                if id_animal.lower() == 'sair':
+                    return
+                verify_animal= atualizar_animal_support_point(id_animal, name)
+
+                if(verify_animal == None):
+                    print("Animal não cadastrado. Informe um ID existente ou digite 'sair' para sair.")
+                else:
+                    animals[(id_animal)] = verify_animal
+                    print(f"Animal {verify_animal.get('name','')} adicionado com sucesso")
+                    break
+        support_points[next_id] = {
+            "name": name,
+            "workers": workers,
+            "animals": animals
+        }
+        print(f"\nSupport point criado com ID {next_id}.")
+        next_id += 1
+        save_data()
+    except Exception:
+        print("Valor inválido. Tente novamente")
 
 def read_support_points():
     print("Pesquisar por:\n1. Nome\n2. Mostrar todos os pontos")
@@ -87,18 +73,16 @@ def read_support_points():
         print("Trabalhadores:")
     if sp['workers']:
         for id, data in sp['workers'].items():
-            print(f"ID: {id}")
             for key, value in data.items():
-                print(f"{key.capitalize()}: {value}")
+                print(f"  {key.capitalize()}: {value}")
     else:
-        print("  Nenhum trabalhador registrado.")
+        print("Nenhum trabalhador registrado.")
 
     print("Animais:")
     if sp['animals']:
         for id_animal, data_animals in sp['animals'].items():
-            print(f"\nAnimal {id_animal}:")
             for key, value in data_animals.items():
-                print(f"{key.capitalize()}: {value}")
+                print(f"  {key.capitalize()}: {value}")
     else:
         print("Nenhum animal registrado.")
 
@@ -123,6 +107,10 @@ def delete_support_point():
         print(support_points[id_delete])
         confirm = input("Tem certeza que deseja deletar? (s/n): ")
         if confirm.lower() == 's':
+            for id_user in support_points[id_delete]["workers"].keys():
+                update_user_workplace(id_user,"")
+            for id_animal in support_points[id_delete]["animals"].keys():
+                update_user_workplace(id_animal,"")
             del support_points[id_delete]
             print("Ponto de Apoio deletado com sucesso.")
             save_data() 
