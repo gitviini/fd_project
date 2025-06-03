@@ -38,7 +38,7 @@ def create_support_point():
                 if(verify_animal == None):
                     print("Animal não cadastrado. Informe um ID existente ou digite 'sair' para sair.")
                 else:
-                    animals[(id_animal)] = verify_animal
+                    animals[id_animal] = verify_animal
                     print(f"Animal {verify_animal.get('name','')} adicionado com sucesso")
                     break
         support_points[next_id] = {
@@ -53,12 +53,20 @@ def create_support_point():
         print("Valor inválido. Tente novamente")
 
 def read_support_points():
-    print("Pesquisar por:\n1. Nome\n2. Mostrar todos os pontos")
-    option = input("Escolha a opção (1/2): ")
+    while True:
 
+         print("Pesquisar por:\n1. Nome\n2. Mostrar todos os pontos")
+         option = input("Escolha a opção (1/2): ")
+         
+         if option in ["1", "2"]:
+            break
+         else:
+            print("Opção inválida. Por favor, digite 1 ou 2.")
+    
     if option == "1":
         name_search = input("Digite o nome para buscar: ")
         found = {id: sp for id, sp in support_points.items() if sp['name'] == name_search}
+
     else:
         found = support_points
 
