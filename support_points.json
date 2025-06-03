@@ -1,4 +1,20 @@
 {
-    "support_points": {},
+    "support_points": {
+        "1": {
+            "name": "A",
+            "workers": {
+                "1": {
+                    "name": "vinicius",
+                    "workplace": "A"
+                }
+            },
+            "animals": {
+                "1": {
+                    "name": "vinicius",
+                    "support_point": "A"
+                }
+            }
+        }
+    },
     "next_id": 1
 }
